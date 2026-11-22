@@ -7,31 +7,29 @@
 <meta name="description" content="Ótica da Barra, no Centro de Barra Velha - SC. Óculos de grau, óculos de sol, lentes e consertos. Av. Santa Catarina, 1485. Telefone (47) 3456-3412.">
 <style>
   :root {
-    --azul: #16324f;
-    --amarelo: #f2c230;
-    --fundo: #ffffff;
-    --cinza: #f2f2f0;
+    --azul: #1d63d1;
+    --azul-escuro: #1650ab;
+    --branco: #ffffff;
     --texto: #1a1a1a;
     --suave: #555555;
-    --linha: #d6d6d2;
+    --linha: #d5dfee;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: auto; }
   body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--texto);
-    background: var(--fundo);
+    background: var(--branco);
     line-height: 1.6;
     font-size: 17px;
   }
   a { color: inherit; }
+  img { display: block; max-width: 100%; }
   .container { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
 
   /* Topo */
-  header { background: var(--azul); color: #fff; }
+  header { background: var(--azul); color: #fff; border-bottom: 1px solid rgba(255,255,255,.25); }
   .topo { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; flex-wrap: wrap; }
   .marca { font-size: 22px; font-weight: bold; text-decoration: none; letter-spacing: .5px; }
-  .marca span { color: var(--amarelo); }
   nav { display: flex; gap: 20px; flex-wrap: wrap; }
   nav a { text-decoration: none; font-size: 15px; }
   nav a:hover { text-decoration: underline; }
@@ -48,9 +46,9 @@
     font-weight: bold;
     font-size: 16px;
   }
-  .botao:hover { background: #0e2236; border-color: #0e2236; }
-  .botao.amarelo { background: var(--amarelo); border-color: var(--amarelo); color: var(--azul); }
-  .botao.amarelo:hover { background: #ddb021; border-color: #ddb021; }
+  .botao:hover { background: var(--azul-escuro); border-color: var(--azul-escuro); }
+  .botao.branco { background: #fff; border-color: #fff; color: var(--azul); }
+  .botao.branco:hover { background: transparent; color: #fff; }
   .botao.vazado { background: transparent; color: var(--azul); }
   .botao.vazado:hover { background: var(--azul); color: #fff; }
   .botao.vazado-claro { background: transparent; border-color: #fff; color: #fff; }
@@ -58,29 +56,34 @@
   .botoes { display: flex; gap: 12px; flex-wrap: wrap; }
 
   /* Abertura */
-  .abertura { background: var(--azul); color: #fff; padding: 64px 0 72px; border-top: 1px solid #2a4a6c; }
-  .abertura h1 { font-size: 44px; line-height: 1.15; margin-bottom: 16px; max-width: 700px; }
-  .abertura p { font-size: 19px; max-width: 600px; margin-bottom: 32px; color: #dfe6ee; }
-  .nota { display: inline-block; background: var(--amarelo); color: var(--azul); font-weight: bold; padding: 6px 12px; margin-bottom: 24px; font-size: 15px; }
+  .abertura { background: var(--azul); color: #fff; padding: 56px 0 64px; }
+  .abertura .container { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+  .abertura h1 { font-size: 42px; line-height: 1.15; margin-bottom: 16px; }
+  .abertura p { font-size: 19px; margin-bottom: 32px; }
+  .abertura img { width: 100%; height: 380px; object-fit: cover; border: 4px solid #fff; }
+  .nota { display: inline-block; background: #fff; color: var(--azul); font-weight: bold; padding: 6px 12px; margin-bottom: 24px; font-size: 15px; }
 
   /* Seções */
   section { padding: 64px 0; }
-  section.cinza { background: var(--cinza); }
+  section.azul { background: var(--azul); color: #fff; }
   h2 { font-size: 30px; color: var(--azul); margin-bottom: 8px; }
+  section.azul h2 { color: #fff; }
   .subtitulo { color: var(--suave); margin-bottom: 32px; }
+  section.azul .subtitulo { color: #fff; }
 
-  .grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 0; border-top: 1px solid var(--linha); border-left: 1px solid var(--linha); }
-  .item { padding: 24px; border-right: 1px solid var(--linha); border-bottom: 1px solid var(--linha); background: #fff; }
+  .grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px; }
+  .item { border: 1px solid var(--linha); background: #fff; }
+  .item img { width: 100%; height: 180px; object-fit: cover; }
+  .item div { padding: 20px; }
   .item h3 { font-size: 18px; color: var(--azul); margin-bottom: 8px; }
   .item p { color: var(--suave); font-size: 16px; }
-  .numero { display: inline-block; width: 32px; height: 32px; line-height: 32px; text-align: center; background: var(--amarelo); color: var(--azul); font-weight: bold; margin-bottom: 12px; }
 
   /* Avaliações */
   .avaliacoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px; }
-  .avaliacao { background: #fff; border: 1px solid var(--linha); border-left: 6px solid var(--amarelo); padding: 24px; }
+  .avaliacao { background: #fff; color: var(--texto); padding: 24px; }
   .avaliacao p { margin-bottom: 12px; }
   .avaliacao strong { color: var(--azul); font-size: 15px; }
-  .estrelas { color: #c99a00; letter-spacing: 2px; margin-bottom: 8px; display: block; }
+  .estrelas { color: var(--azul); letter-spacing: 2px; margin-bottom: 8px; display: block; }
 
   /* Visite */
   .visite { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
@@ -93,12 +96,15 @@
   .mapa { width: 100%; height: 380px; border: 1px solid var(--linha); display: block; }
 
   /* Rodapé */
-  footer { background: var(--azul); color: #dfe6ee; padding: 32px 0; font-size: 15px; }
+  footer { background: var(--azul); color: #fff; padding: 32px 0; font-size: 15px; }
   .rodape { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .credito { font-size: 13px; opacity: .85; }
 
   @media (max-width: 760px) {
-    .abertura { padding: 48px 0 56px; }
+    .abertura { padding: 40px 0 48px; }
+    .abertura .container { grid-template-columns: 1fr; gap: 28px; }
     .abertura h1 { font-size: 32px; }
+    .abertura img { height: 240px; }
     .visite { grid-template-columns: 1fr; }
     nav { gap: 14px; }
     section { padding: 48px 0; }
@@ -110,7 +116,7 @@
 
 <header>
   <div class="container topo">
-    <a class="marca" href="#">ÓTICA DA <span>BARRA</span></a>
+    <a class="marca" href="#">ÓTICA DA BARRA</a>
     <nav>
       <a href="#servicos">Serviços</a>
       <a href="#avaliacoes">Avaliações</a>
@@ -121,13 +127,16 @@
 
 <div class="abertura">
   <div class="container">
-    <span class="nota">★ 4,8 no Google · 86 avaliações</span>
-    <h1>Óculos de grau, de sol e lentes no Centro de Barra Velha.</h1>
-    <p>Atendimento próximo, equipe técnica qualificada e preço justo. Venha escolher sua armação com quem entende do assunto.</p>
-    <div class="botoes">
-      <a class="botao amarelo" href="tel:+554734563412">Ligar (47) 3456-3412</a>
-      <a class="botao vazado-claro" href="https://instagram.com/oticadabarra" target="_blank" rel="noopener">Ver no Instagram</a>
+    <div>
+      <span class="nota">★ 4,8 no Google · 86 avaliações</span>
+      <h1>Óculos de grau, de sol e lentes no Centro de Barra Velha.</h1>
+      <p>Atendimento próximo, equipe técnica qualificada e preço justo. Venha escolher sua armação com quem entende do assunto.</p>
+      <div class="botoes">
+        <a class="botao branco" href="tel:+554734563412">Ligar (47) 3456-3412</a>
+        <a class="botao vazado-claro" href="https://instagram.com/oticadabarra" target="_blank" rel="noopener">Ver no Instagram</a>
+      </div>
     </div>
+    <img src="https://images.unsplash.com/photo-1788347101988-bf40abcbb2c7?w=1000&q=80&auto=format&fit=crop" alt="Prateleiras com óculos expostos em uma ótica">
   </div>
 </div>
 
@@ -137,30 +146,38 @@
     <p class="subtitulo">Tudo para enxergar bem, em um só lugar.</p>
     <div class="grade">
       <div class="item">
-        <span class="numero">1</span>
-        <h3>Óculos de grau</h3>
-        <p>Armações para todos os estilos e lentes feitas sob medida para a sua receita.</p>
+        <img src="https://images.unsplash.com/photo-1589176449149-71f7ea77ec25?w=600&q=80&auto=format&fit=crop" alt="Óculos de grau de armação preta" loading="lazy">
+        <div>
+          <h3>Óculos de grau</h3>
+          <p>Armações para todos os estilos e lentes feitas sob medida para a sua receita.</p>
+        </div>
       </div>
       <div class="item">
-        <span class="numero">2</span>
-        <h3>Óculos de sol</h3>
-        <p>Modelos variados, com proteção para o sol forte do litoral.</p>
+        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80&auto=format&fit=crop" alt="Óculos de sol com armação dourada" loading="lazy">
+        <div>
+          <h3>Óculos de sol</h3>
+          <p>Modelos variados, com proteção para o sol forte do litoral.</p>
+        </div>
       </div>
       <div class="item">
-        <span class="numero">3</span>
-        <h3>Lentes</h3>
-        <p>Lentes para longe, perto e multifocais. A equipe ajuda a escolher a melhor opção.</p>
+        <img src="https://images.unsplash.com/photo-1566232212863-d8543adb6eda?w=600&q=80&auto=format&fit=crop" alt="Óculos de armação prateada" loading="lazy">
+        <div>
+          <h3>Lentes</h3>
+          <p>Lentes para longe, perto e multifocais. A equipe ajuda a escolher a melhor opção.</p>
+        </div>
       </div>
       <div class="item">
-        <span class="numero">4</span>
-        <h3>Ajustes e consertos</h3>
-        <p>Quebrou a haste ou o óculos ficou torto? Traga até a loja que a gente resolve.</p>
+        <img src="https://images.unsplash.com/photo-1450027179084-b3ff1fce4bb5?w=600&q=80&auto=format&fit=crop" alt="Óculos com armação marrom sobre a mesa" loading="lazy">
+        <div>
+          <h3>Ajustes e consertos</h3>
+          <p>Quebrou a haste ou o óculos ficou torto? Traga até a loja que a gente resolve.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="avaliacoes" class="cinza">
+<section id="avaliacoes" class="azul">
   <div class="container">
     <h2>O que os clientes dizem</h2>
     <p class="subtitulo">Nota 4,8 de 5 no Google, com 86 avaliações.</p>
@@ -182,7 +199,7 @@
       </div>
     </div>
     <div class="botoes" style="margin-top:32px">
-      <a class="botao vazado" href="https://www.google.com/maps/place/%C3%93tica+da+Barra/@-26.6440223,-48.6855967,17z/data=!4m6!3m5!1s0x94d92b5b055ae76f:0x8ded345737ef8bc3!8m2!3d-26.6440223!4d-48.6855967!16s%2Fg%2F11gk8r169t" target="_blank" rel="noopener">Ver todas no Google</a>
+      <a class="botao vazado-claro" href="https://www.google.com/maps/place/%C3%93tica+da+Barra/@-26.6440223,-48.6855967,17z/data=!4m6!3m5!1s0x94d92b5b055ae76f:0x8ded345737ef8bc3!8m2!3d-26.6440223!4d-48.6855967!16s%2Fg%2F11gk8r169t" target="_blank" rel="noopener">Ver todas no Google</a>
     </div>
   </div>
 </section>
@@ -215,6 +232,7 @@
   <div class="container rodape">
     <span>© Ótica da Barra · Barra Velha - SC</span>
     <span>Av. Santa Catarina, 1485 · (47) 3456-3412</span>
+    <span class="credito">Fotos ilustrativas: Unsplash</span>
   </div>
 </footer>
 
